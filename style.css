@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #888888;
+    display: flex;
+    align-items: center;
+    
+}
+
+.tableContainer{
+    padding: 10px 20px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.rowContainer{
+    background-color: #888888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.elementContainer{
+    height: 100px;
+    width: 80px;
+    padding: 5px;
+    margin: 2px 2px; 
+}
+
+.elementNumber,.elementSign, .elementName{
+    display: block;
+}
+
+.elementSign, .elementName{
+    text-align: center;
+}
+
+.elementNumber{
+    font-size: 1.5em;
+}
+
+.elementSign{
+    font-size: 2.1em;
+}
+
+.elementName{
+    font-size: 0.8em;
+}
+
+.split-1, .split-2{
+    display: flex;
+}

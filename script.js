@@ -1,151 +1,131 @@
 // setting variables / selecting elements
 
+let allElements = [
+    ...document.getElementsByName("alkalineEarth"),
+    ...document.getElementsByName("alkalineMetal"),
+    ...document.getElementsByName("transitionMetal"),
+    ...document.getElementsByName("basicMetal"),
+    ...document.getElementsByName("semiMetal"),
+    ...document.getElementsByName("nonMetal"),
+    ...document.getElementsByName("halogen"),
+    ...document.getElementsByName("nobleGas"),
+    ...document.getElementsByName("lanthanides"),
+    ...document.getElementsByName("actinides")
+]
 
-let alkalineEarths = document.getElementsByName("alkalineEarth")
-let alkalineMetals = document.getElementsByName("alkalineMetal")
-let transitionMetals = document.getElementsByName("transitionMetal")
-let basicMetals = document.getElementsByName("basicMetal")
-let semiMetals = document.getElementsByName("semiMetal")
-let nonMetals = document.getElementsByName("nonMetal")
-let halogens = document.getElementsByName("halogen")
-let nobleGases = document.getElementsByName("nobleGas")
-let lanthanides = document.getElementsByName("lanthanides")
-let actinides = document.getElementsByName("actinides")
 let neonBtn = document.querySelector("#neonButton")
-let allElements = document.querySelectorAll(".elementContainer")
-let allGroups = [alkalineEarths, alkalineMetals,transitionMetals, basicMetals, semiMetals, nonMetals, halogens, nobleGases, lanthanides, actinides]
-let lightsOn = false
+let originalBorder, originalColor
 
 // setting functions
 
+function getColors(elem){
+    //console.log(elem.style.border)
+    //console.log(elem.style.color)
+}
 
-function turnLightsOn (selectedElement){
-    if(selectedElement == alkalineEarths){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #FB9A40"
-            element.style.color = "#FB9A40" 
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+function turnLightsOn(everyElement){
+    everyElement.style.boxShadow = "0px 0px 30px"
+    everyElement.style.textShadow = "2px 2px 10px"
+    
+    if(everyElement.getAttribute("name") === "alkalineEarth"){
+        everyElement.style.border = "4px solid #FB9A40"
+        everyElement.style.color = "#FB9A40" 
     }
 
-    if(selectedElement == alkalineMetals){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #FF0000"
-            element.style.color = "#FF0000" 
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "alkalineMetal"){
+        everyElement.style.border = "4px solid #FF0000"
+        everyElement.style.color = "#FF0000" 
     }
 
-    if(selectedElement == transitionMetals){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #ffd617"
-            element.style.color = "#ffd617"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "transitionMetal"){
+        everyElement.style.border = "4px solid #ffd617"
+        everyElement.style.color = "#ffd617"
     }
 
-    if(selectedElement == basicMetals){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #00cb1d"
-            element.style.color = "#00cb1d"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "basicMetal"){
+        everyElement.style.border = "4px solid #00cb1d"
+        everyElement.style.color = "#00cb1d"
     }
 
-    if(selectedElement == semiMetals){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #00ede2"
-            element.style.color = "#00ede2"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "semiMetal"){
+        everyElement.style.border = "4px solid #00ede2"
+        everyElement.style.color = "#00ede2"
     }
 
-    if(selectedElement == nonMetals){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #EFF8FF"
-            element.style.color = "#EFF8FF"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "nonMetal"){
+        everyElement.style.border = "4px solid #EFF8FF"
+        everyElement.style.color = "#EFF8FF"
     }
 
-    if(selectedElement == halogens){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #9e00ff"
-            element.style.color = "#9e00ff"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "halogen"){
+        everyElement.style.border = "4px solid #9e00ff"
+        everyElement.style.color = "#9e00ff"
     }
 
-    if(selectedElement == nobleGases){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #d22cff"
-            element.style.color = "#d22cff"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "nobleGas"){
+        everyElement.style.border = "4px solid #d22cff"
+        everyElement.style.color = "#d22cff"
     }
 
-    if(selectedElement == lanthanides){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #ff0063"
-            element.style.color = "#ff0063"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "lanthanides"){
+        everyElement.style.border = "4px solid #ff0063"
+        everyElement.style.color = "#ff0063"
     }
 
-    if(selectedElement == actinides){
-        selectedElement.forEach(element => {
-            element.style.border = "4px solid #ff0041"
-            element.style.color = "#ff0041"
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-        });
+    if(everyElement.getAttribute("name") === "actinides"){
+        everyElement.style.border = "4px solid #ff0041"
+        everyElement.style.color = "#ff0041"
     }
 }
 
-function turnLightsOff(selectedElement){
-    selectedElement.forEach(element =>{
-        let originalBorder = element.style.border
-        let originalColor = element.style.color
+function turnLightsOff(everyElement){
+    if (everyElement.style.boxShadow !== "0px 0px 0px" && everyElement.style.textShadow !== "0px 0px 0px") {
+        everyElement.style.border = "4px solid #202020"
+        everyElement.style.color = "#202020"
+        everyElement.style.boxShadow = "0px 0px 0px"
+        everyElement.style.textShadow = "0px 0px 0px"
+    }
+}
+
+function enterWhileOff(event){
+    if (neonBtn.checked == false) {
+        let element = event.target
+        element.style.border = "4px solid #EFF8FF"
+        element.style.color = "#EFF8FF"
+        element.style.boxShadow =  "0px 0px 30px"
+        element.style.textShadow = "2px 2px 10px"
+    }
+    
+}
+
+function leaveWhileOff(event){
+    if (neonBtn.checked == false) {
+        let element = event.target
         element.style.border = "4px solid #202020"
         element.style.color = "#202020"
         element.style.boxShadow = "0px 0px 0px"
-        element.style.textShadow = "0px 0px 0px"
-        //funçao para acender e apagar os leds nas cores correspondentes de cada grupo
-        
-        element.addEventListener("mouseenter", e =>{
-            element.style.boxShadow = "0px 0px 30px"
-            element.style.textShadow = "2px 2px 10px"
-            element.style.border = originalBorder
-            element.style.color = originalColor
-        })
-
-        element.addEventListener("mouseleave", e =>{
-            element.style.border = "4px solid #202020"
-            element.style.color = "#202020"
-            element.style.boxShadow = "0px 0px 0px"
-            element.style.textShadow = "0px 0px 0px"
-        })
-    })
-}
-// setting events / calling functions 
-
-function inputCheck(){
-    if(neonBtn.checked == true){
-        allGroups.map(group => turnLightsOn (group)) 
-        lightsOn = true   
-    } else {
-        turnLightsOff(allElements)
-        lightsOn = false
+        element.style.textShadow = "0px 0px 0px" 
     }
 }
 
-neonBtn.addEventListener("click", inputCheck)
+// setting events / calling functions 
+
+function inputCheck() {
+    console.log(neonBtn.checked)
+    allElements.map(every => {
+        if (neonBtn.checked == true) {
+            
+            turnLightsOn(every)
+            //getColors(every)
+        } else {
+            
+            turnLightsOff(every)
+            every.addEventListener("mouseenter", enterWhileOff)
+            every.addEventListener("mouseleave", leaveWhileOff)
+        }
+    })
+}
+
+neonBtn.addEventListener("change", inputCheck)
+
+

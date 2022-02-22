@@ -44,8 +44,8 @@ input{
     height: 70px;
     width: 65px;
     padding: 5px;
-    transition: 0.5s;
     border-radius: 8px;
+    transition: 0.2s;
     margin: 3px 3px;    
     cursor:default;
 }

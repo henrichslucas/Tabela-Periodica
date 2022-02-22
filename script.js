@@ -18,23 +18,18 @@ let originalBorder, originalColor
 
 // setting functions
 
-function getColors(elem){
-    //console.log(elem.style.border)
-    //console.log(elem.style.color)
-}
-
 function turnLightsOn(everyElement){
     everyElement.style.boxShadow = "0px 0px 30px"
     everyElement.style.textShadow = "2px 2px 10px"
     
-    if(everyElement.getAttribute("name") === "alkalineEarth"){
-        everyElement.style.border = "4px solid #FB9A40"
-        everyElement.style.color = "#FB9A40" 
-    }
-
     if(everyElement.getAttribute("name") === "alkalineMetal"){
         everyElement.style.border = "4px solid #FF0000"
         everyElement.style.color = "#FF0000" 
+    }
+
+    if(everyElement.getAttribute("name") === "alkalineEarth"){
+        everyElement.style.border = "4px solid #FB9A40"
+        everyElement.style.color = "#FB9A40" 
     }
 
     if(everyElement.getAttribute("name") === "transitionMetal"){
@@ -54,7 +49,7 @@ function turnLightsOn(everyElement){
 
     if(everyElement.getAttribute("name") === "nonMetal"){
         everyElement.style.border = "4px solid #EFF8FF"
-        everyElement.style.color = "#EFF8FF"
+        everyElement.style.color = "#EFF8FF"    
     }
 
     if(everyElement.getAttribute("name") === "halogen"){
@@ -90,12 +85,8 @@ function turnLightsOff(everyElement){
 function enterWhileOff(event){
     if (neonBtn.checked == false) {
         let element = event.target
-        element.style.border = "4px solid #EFF8FF"
-        element.style.color = "#EFF8FF"
-        element.style.boxShadow =  "0px 0px 30px"
-        element.style.textShadow = "2px 2px 10px"
+        turnLightsOn(element)
     }
-    
 }
 
 function leaveWhileOff(event){
@@ -114,11 +105,8 @@ function inputCheck() {
     console.log(neonBtn.checked)
     allElements.map(every => {
         if (neonBtn.checked == true) {
-            
             turnLightsOn(every)
-            //getColors(every)
         } else {
-            
             turnLightsOff(every)
             every.addEventListener("mouseenter", enterWhileOff)
             every.addEventListener("mouseleave", leaveWhileOff)

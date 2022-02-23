@@ -26,7 +26,6 @@ header h2{
 }
 
 body{
-    
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -56,30 +55,75 @@ input{
 }
 
 #popUpBox{
-    width: 900px;
-    height: 500px;
-    top: 200px;
+    width: 1000px;
+    height: 800px;
     padding: 5px;
     border-radius: 8px;
     z-index: -1;
     opacity: 0;
     background-color: #202020;
-    border: 4px solid blueviolet;
     transition: all 0.2s;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #popUpBox.active{
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 2;
-    animation: opening 0.2s ;
-    box-shadow: 0px 0px 30px, inset 0px 0px 20px;
+    box-shadow: 0px 0px 30px, inset 0px 0px 20px; 
 }
 
-@keyframes opening {
-    0%{
-        transform: translateY(700px) scale(1);
-    }
+.popUpBtn{
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    border: none;
+    position: absolute;
+    display: block;
+}
+
+.popUpBtn:hover{
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.elementInfoTitleContainer{
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.elementImgContainer{
+    top: 70px;
+    width: 80%;
+    height: 400px;
+    border-radius: 8px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+#elementInfoContainer{
+    font-size: 25px;
+    margin: 100px 0px 0px 0px;
+    width: 100%;
+    text-align: center;
 }
 
 .tableContainer{
@@ -89,8 +133,6 @@ input{
 }
 
 .rowContainer{
-    
-    background-color: #000;
     display: flex;
     justify-content: space-between;
 }
@@ -104,6 +146,7 @@ input{
     cursor:pointer;
     transition: all 0.5s;
 }
+
 
 .elementNumber,.elementSign, .elementName{
     display: block;

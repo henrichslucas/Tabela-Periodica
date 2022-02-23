@@ -12,8 +12,6 @@ let neonBtn = document.querySelector("#neonButton")
 function turnLightsOn(everyElement){
     everyElement.style.boxShadow = "0px 0px 10px, inset 0px 0px 20px"
     everyElement.style.textShadow = "2px 2px 10px"
-    //everyElement.style.transition = "0.2s"
-    
     
     if(everyElement.getAttribute("name") === "alkalineMetal"){
         everyElement.style.border = "4px solid #FF0000"
@@ -72,7 +70,6 @@ function turnLightsOff(everyElement){
         everyElement.style.color = "#202020"
         everyElement.style.boxShadow = "0px 0px 0px"
         everyElement.style.textShadow = "0px 0px 0px"
-        //everyElement.style.transition = "0.5s"
     }
 }
 
@@ -94,15 +91,33 @@ function leaveWhileOff(event){
 }
 
 function informationWindowPopout(event){ 
-    let popUp = document.querySelector("#popUpBox")
-    let btn = document.querySelector(".popUpBtn")
-    popUp.classList.add("active")
-    
-    btn.addEventListener("click", function(){
-        popUp.classList.remove("active")
-    })
+    if (event.target.getAttribute("class") == "elementContainer"){
 
-    
+        // selecionando elementos
+        let popUp = document.querySelector("#popUpBox")
+        let btn = document.querySelector(".popUpBtn")
+        let popUpTitle = document.querySelector(".elementInfoTitleContainer")
+        let elementName = event.target.lastElementChild.innerHTML
+        let elementLink = document.querySelector("#elementLink")
+
+        // ativação e desativação do pop-up
+        popUp.classList.add("active")
+        btn.addEventListener("click", function(){
+            popUp.classList.remove("active")
+        })
+
+        // nome do elemento
+        popUpTitle.lastElementChild.innerHTML = elementName
+
+
+        // imagem do elemento ( vai ter que pegar uma pra cada elemento, n tem jeito)
+
+
+        // link da wiki 
+
+        console.log(elementLink)
+        elementLink.setAttribute("href", `https://en.wikipedia.org/wiki/${elementName}`)
+    }
 }
 
 // setting events / calling functions 
@@ -110,7 +125,6 @@ function informationWindowPopout(event){
 function inputCheck() {
     allElements.map(every => {
         every.addEventListener("click", informationWindowPopout)
-
 
         if (neonBtn.checked == true) {
             turnLightsOn(every)

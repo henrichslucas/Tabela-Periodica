@@ -2,7 +2,31 @@
     font-family: Neon;
     src: url("Neon.ttf");
 }
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header{
+    top: 10px;
+    right: 0px;
+    left: 0px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+header h2{
+    top: 0;
+    margin: 0;
+    font-size: 30px;
+    text-shadow: 2px 2px 20px;
+    color: #00EDE2;
+}
+
 body{
+    
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -14,18 +38,48 @@ body{
     font-family: Neon;
 }
 label{
+    right: 5px;
     margin: 0;
     padding: 0;
-    color: #fff;
+    text-shadow: 2px 2px 7px;
+    color: #00EDE2;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
 }
 
 input{
     height: 20px;
     width: 20px;
     position: relative;
+}
+
+#popUpBox{
+    width: 900px;
+    height: 500px;
+    top: 200px;
+    padding: 5px;
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    background-color: #202020;
+    border: 4px solid blueviolet;
+    transition: all 0.2s;
+    position: absolute;
+}
+
+#popUpBox.active{
+    opacity: 0.8;
+    z-index: 2;
+    animation: opening 0.2s ;
+    box-shadow: 0px 0px 30px, inset 0px 0px 20px;
+}
+
+@keyframes opening {
+    0%{
+        transform: translateY(700px) scale(1);
+    }
 }
 
 .tableContainer{
@@ -35,6 +89,7 @@ input{
 }
 
 .rowContainer{
+    
     background-color: #000;
     display: flex;
     justify-content: space-between;
@@ -45,9 +100,9 @@ input{
     width: 65px;
     padding: 5px;
     border-radius: 8px;
-    transition: 0.2s;
     margin: 3px 3px;    
-    cursor:default;
+    cursor:pointer;
+    transition: all 0.5s;
 }
 
 .elementNumber,.elementSign, .elementName{
@@ -74,4 +129,3 @@ input{
 .split-1, .split-2{
     display: flex;
 }
-

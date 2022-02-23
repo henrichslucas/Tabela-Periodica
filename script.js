@@ -1,26 +1,19 @@
 // setting variables / selecting elements
 
 let allElements = [
-    ...document.getElementsByName("alkalineEarth"),
-    ...document.getElementsByName("alkalineMetal"),
-    ...document.getElementsByName("transitionMetal"),
-    ...document.getElementsByName("basicMetal"),
-    ...document.getElementsByName("semiMetal"),
-    ...document.getElementsByName("nonMetal"),
-    ...document.getElementsByName("halogen"),
-    ...document.getElementsByName("nobleGas"),
-    ...document.getElementsByName("lanthanides"),
-    ...document.getElementsByName("actinides")
+    ...document.querySelectorAll(".elementContainer")
 ]
 
 let neonBtn = document.querySelector("#neonButton")
-let originalBorder, originalColor
+
 
 // setting functions
 
 function turnLightsOn(everyElement){
-    everyElement.style.boxShadow = "0px 0px 30px"
+    everyElement.style.boxShadow = "0px 0px 10px, inset 0px 0px 20px"
     everyElement.style.textShadow = "2px 2px 10px"
+    //everyElement.style.transition = "0.2s"
+    
     
     if(everyElement.getAttribute("name") === "alkalineMetal"){
         everyElement.style.border = "4px solid #FF0000"
@@ -79,6 +72,7 @@ function turnLightsOff(everyElement){
         everyElement.style.color = "#202020"
         everyElement.style.boxShadow = "0px 0px 0px"
         everyElement.style.textShadow = "0px 0px 0px"
+        //everyElement.style.transition = "0.5s"
     }
 }
 
@@ -99,11 +93,25 @@ function leaveWhileOff(event){
     }
 }
 
+function informationWindowPopout(event){ 
+    let popUp = document.querySelector("#popUpBox")
+    let btn = document.querySelector(".popUpBtn")
+    popUp.classList.add("active")
+    
+    btn.addEventListener("click", function(){
+        popUp.classList.remove("active")
+    })
+
+    
+}
+
 // setting events / calling functions 
 
 function inputCheck() {
-    console.log(neonBtn.checked)
     allElements.map(every => {
+        every.addEventListener("click", informationWindowPopout)
+
+
         if (neonBtn.checked == true) {
             turnLightsOn(every)
         } else {
@@ -115,5 +123,3 @@ function inputCheck() {
 }
 
 neonBtn.addEventListener("change", inputCheck)
-
-

@@ -90,6 +90,22 @@ function leaveWhileOff(event){
     }
 }
 
+function setLoading(){
+    let loadingWheel = document.querySelector("#loading")
+    let imgContainer = document.querySelector(".elementImgContainer")
+
+    loadingWheel.setAttribute("class", "active")
+
+    imgContainer.setAttribute("state", "loading")
+    
+
+    setTimeout(() => {
+        loadingWheel.removeAttribute("class")
+        imgContainer.removeAttribute("state")
+
+    }, 900)
+}
+
 function informationWindowPopout(event){ 
     if (event.target.getAttribute("class") == "elementContainer"){
 
@@ -97,28 +113,33 @@ function informationWindowPopout(event){
         let popUp = document.querySelector("#popUpBox")
         let btn = document.querySelector(".popUpBtn")
         let popUpTitle = document.querySelector(".elementInfoTitleContainer")
-        let elementName = event.target.lastElementChild.innerHTML
         let elementLink = document.querySelector("#elementLink")
+        let elementImg = document.querySelector(".elementImg")
+        let elementName = event.target.lastElementChild.innerHTML
 
-        // ativação e desativação do pop-up
+
         popUp.classList.add("active")
         btn.addEventListener("click", function(){
             popUp.classList.remove("active")
         })
 
-        // nome do elemento
         popUpTitle.lastElementChild.innerHTML = elementName
-
 
         // imagem do elemento ( vai ter que pegar uma pra cada elemento, n tem jeito)
 
+        fetch("imagesSrc.json")
+            .then(res => res.json())
+            .then(data => {
+
+                setLoading()
+                elementImg.setAttribute("src", data[elementName].url)
+            })
 
         // link da wiki 
-
-        console.log(elementLink)
         elementLink.setAttribute("href", `https://en.wikipedia.org/wiki/${elementName}`)
     }
 }
+
 
 // setting events / calling functions 
 

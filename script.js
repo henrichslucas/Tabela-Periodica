@@ -1,15 +1,15 @@
-// setting variables / selecting elements
 
 let allElements = [
     ...document.querySelectorAll(".elementContainer")
 ]
 
 let neonBtn = document.querySelector("#neonButton")
-
-
-// setting functions
+let title = document.querySelector("#pageTitle")
 
 function turnLightsOn(everyElement){
+    title.style.textShadow = "2px 2px 10px"
+    title.style.color = "#00EDE2"
+
     everyElement.style.boxShadow = "0px 0px 10px, inset 0px 0px 20px"
     everyElement.style.textShadow = "2px 2px 10px"
     
@@ -65,6 +65,9 @@ function turnLightsOn(everyElement){
 }
 
 function turnLightsOff(everyElement){
+    title.style.textShadow = "0px 0px 0px"
+    title.style.color = "#202020"
+    
     if (everyElement.style.boxShadow !== "0px 0px 0px" && everyElement.style.textShadow !== "0px 0px 0px") {
         everyElement.style.border = "4px solid #202020"
         everyElement.style.color = "#202020"
@@ -90,63 +93,8 @@ function leaveWhileOff(event){
     }
 }
 
-function setLoading(){
-    let loadingWheel = document.querySelector("#loading")
-    let imgContainer = document.querySelector(".elementImgContainer")
-
-    loadingWheel.setAttribute("class", "active")
-
-    imgContainer.setAttribute("state", "loading")
-    
-
-    setTimeout(() => {
-        loadingWheel.removeAttribute("class")
-        imgContainer.removeAttribute("state")
-
-    }, 900)
-}
-
-function informationWindowPopout(event){ 
-    if (event.target.getAttribute("class") == "elementContainer"){
-
-        // selecionando elementos
-        let popUp = document.querySelector("#popUpBox")
-        let btn = document.querySelector(".popUpBtn")
-        let popUpTitle = document.querySelector(".elementInfoTitleContainer")
-        let elementLink = document.querySelector("#elementLink")
-        let elementImg = document.querySelector(".elementImg")
-        let elementName = event.target.lastElementChild.innerHTML
-
-
-        popUp.classList.add("active")
-        btn.addEventListener("click", function(){
-            popUp.classList.remove("active")
-        })
-
-        popUpTitle.lastElementChild.innerHTML = elementName
-
-        // imagem do elemento ( vai ter que pegar uma pra cada elemento, n tem jeito)
-
-        fetch("imagesSrc.json")
-            .then(res => res.json())
-            .then(data => {
-
-                setLoading()
-                elementImg.setAttribute("src", data[elementName].url)
-            })
-
-        // link da wiki 
-        elementLink.setAttribute("href", `https://en.wikipedia.org/wiki/${elementName}`)
-    }
-}
-
-
-// setting events / calling functions 
-
 function inputCheck() {
     allElements.map(every => {
-        every.addEventListener("click", informationWindowPopout)
-
         if (neonBtn.checked == true) {
             turnLightsOn(every)
         } else {

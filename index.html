@@ -2,34 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Periodic Table</title>
 </head>
 <body onload="inputCheck()">
     <header>
-        <h2>Periodic Table</h2>
+        <h2 id="pageTitle">Periodic Table</h2>
         <label for="neonButton">
             <span>Neon Switch</span>
-            <input type="checkbox" id="neonButton" >
+            <input type="checkbox" id="neonButton" checked >
         </label>
     </header>
-
-    <div id="popUpBox">
-        <button class="popUpBtn">&times;</button>
-
-        <div class="elementInfoTitleContainer">
-            <h2 class="elementInfoTitle">...</h2>
-        </div>  
-
-        <div class="elementImgContainer">
-            <div id="loading"></div>
-            <img class="elementImg" src="" alt="">
-        </div>
-
-        <div id="elementInfoContainer"><a id="elementLink" href="" target="_blank">Click here for more info about it</a></div>
-    </div>
     
     <div class="tableContainer">
         <div id="firstRowContainer" class="rowContainer">
@@ -394,7 +380,7 @@
             <div class="elementContainer" name="lanthanides" id="lanthanides">
                 <span class="elementNumber">57-71</span>
                 <span class="elementSign">?</span>
-                <span class="elementName">Lanthanides</span>
+                <span class="elementName"> Lanthanides</span>
             </div>
 
             <div class="elementContainer" name="transitionMetal" id="hf">
@@ -595,6 +581,190 @@
                 <span class="elementNumber">118</span>
                 <span class="elementSign">Og</span>
                 <span class="elementName">Oganesson</span>
+            </div>
+        </div>
+
+        <div id="eighthRowContainer" class="rowContainer">
+            <div class="elementContainer" name="lanthanides" id="la" state="hidden">
+                <span class="elementNumber">57</span>
+                <span class="elementSign">La</span>
+                <span class="elementName">Lanthanium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="ce" state="hidden">
+                <span class="elementNumber">58</span>
+                <span class="elementSign">Ce</span>
+                <span class="elementName">Cerium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="pr" state="hidden">
+                <span class="elementNumber">59</span>
+                <span class="elementSign">Pr</span>
+                <span class="elementName">Praseodymium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="nd" state="hidden">
+                <span class="elementNumber">60</span>
+                <span class="elementSign">Nd</span>
+                <span class="elementName">Neodymium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="pm" state="hidden">
+                <span class="elementNumber">61</span>
+                <span class="elementSign">Pm</span>
+                <span class="elementName">Promethium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="sm" state="hidden">
+                <span class="elementNumber">62</span>
+                <span class="elementSign">Sm</span>
+                <span class="elementName">Samarium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="eu" state="hidden">
+                <span class="elementNumber">63</span>
+                <span class="elementSign">Eu</span>
+                <span class="elementName">Europium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="gd" state="hidden">
+                <span class="elementNumber">64</span>
+                <span class="elementSign">Gd</span>
+                <span class="elementName">Gadolinium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="tb" state="hidden">
+                <span class="elementNumber">65</span>
+                <span class="elementSign">Tb</span>
+                <span class="elementName">Terbium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="dy" state="hidden">
+                <span class="elementNumber">66</span>
+                <span class="elementSign">Dy</span>
+                <span class="elementName">Dysprosium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="ho" state="hidden">
+                <span class="elementNumber">67</span>
+                <span class="elementSign">Ho</span>
+                <span class="elementName">Holmium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="er" state="hidden">
+                <span class="elementNumber">68</span>
+                <span class="elementSign">Er</span>
+                <span class="elementName">Erbium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="tm" state="hidden">
+                <span class="elementNumber">69</span>
+                <span class="elementSign">Tm</span>
+                <span class="elementName">Thulium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="yb" state="hidden">
+                <span class="elementNumber">70</span>
+                <span class="elementSign">Yb</span>
+                <span class="elementName">Ytterbium</span>
+            </div>
+
+            <div class="elementContainer" name="lanthanides" id="lu" state="hidden">
+                <span class="elementNumber">71</span>
+                <span class="elementSign">Lu</span>
+                <span class="elementName">Lutetium</span>
+            </div>
+        </div>
+
+        <div id="ninthRowContainer" class="rowContainer">
+            <div class="elementContainer" name="actinides" id="ac" >
+                <span class="elementNumber">89</span>
+                <span class="elementSign">Ac</span>
+                <span class="elementName">Actinium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="th" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Th</span>
+                <span class="elementName">Thorium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="pa" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Pa</span>
+                <span class="elementName">Protactinium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="u" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">U</span>
+                <span class="elementName">Uranium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="np" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Np</span>
+                <span class="elementName">Neptunium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="pu" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Pu</span>
+                <span class="elementName">Plutonium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="am" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Am</span>
+                <span class="elementName">Americium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="cm" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Cm</span>
+                <span class="elementName">Curium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="bk" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Bk</span>
+                <span class="elementName">Berkelium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="cf" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Cf</span>
+                <span class="elementName">Californium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="es" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Es</span>
+                <span class="elementName">Einstenium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="fm" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Fm</span>
+                <span class="elementName">Fermium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="md" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Md</span>
+                <span class="elementName">Mendelevium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="no" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">No</span>
+                <span class="elementName">Nobelium</span>
+            </div>
+
+            <div class="elementContainer" name="actinides" id="lr" state="hidden" >
+                <span class="elementNumber">57</span>
+                <span class="elementSign">Lr</span>
+                <span class="elementName">Lawrencium</span>
             </div>
         </div>
     </div>

@@ -3,6 +3,20 @@
     src: url("Neon.ttf");
 }
 
+:root{
+    --alkalineEarthColor : #FF0000;
+    --alkalineMetalColor : #fb9a40;
+    --transitionMetalColor : #ffd617;
+    --basicMetalColor : #00cb1d;
+    --semiMetalColor : #00ede2 ;
+    --nonMetalColor : #eff8ff;
+    --halogenColor : #9e00ff;
+    --nobleGasColor : #d22cff;
+    --lanthanidesColor : #ff0063;
+    --actinidesColor : #ff0041;
+    --offColor : #202020;
+}
+
 a{
     color: #fff;
     text-decoration: none;
@@ -12,7 +26,7 @@ header{
     top: 10px;
     right: 0px;
     left: 0px;
-    background-color: #000;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     position: absolute;
@@ -22,7 +36,8 @@ header{
     top: 0;
     margin: 0;
     font-size: 30px; 
-    transition: all 0.2s;
+    color: #00EDE2;
+    text-shadow: 2px 2px 10px;
 }
 
 body{
@@ -37,7 +52,7 @@ body{
     font-family: Neon;
 }
 
-label{
+label[for = neonButton]{
     right: 5px;
     margin: 0;
     padding: 0;
@@ -51,8 +66,36 @@ label{
 
 input{
     height: 20px;
-    width: 20px;
+    width: 35px;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: #c6c6c6;
     position: relative;
+    outline: none;
+    appearance: none;
+    cursor:pointer;
+}
+
+input:checked{
+    background-color: #00EDE2;
+}
+
+input::before{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    transform: scale(1.07);
+    transition: 0.2s;
+    outline: none;
+    background-color: #fff;
+    content: "";
+    position: absolute;
+}
+
+input:checked::before{
+    left: 15px
 }
 
 .tableContainer{
@@ -75,9 +118,73 @@ input{
     width: 65px;
     padding: 5px;
     border-radius: 8px;
-    margin: 3px 3px;    
+    margin: 4px 4px;    
     cursor:pointer;
-    transition: all 0.2s;
+    animation: pop 0.7s forwards;
+}
+
+@keyframes pop {
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.elementContainer[status = off]{
+    box-shadow : 0px 0px 0px;
+    text-shadow: 0px 0px 0px;
+    color: var(--offColor);
+    border: 4px solid var(--offColor);
+}
+
+
+.elementContainer[status = active]{
+    box-shadow : 0px 0px 10px, inset 0px 0px 20px;
+    text-shadow: 2px 2px 10px;
+}
+
+.elementContainer[name = alkalineMetal][status = active]{
+    border : 4px solid var(--alkalineEarthColor);
+    color : var(--alkalineEarthColor);
+}
+.elementContainer[name = alkalineEarth][status = active]{
+    border : 4px solid var(--alkalineMetalColor);
+    color : var(--alkalineMetalColor);
+}
+.elementContainer[name = transitionMetal][status = active]{
+    border : 4px solid var(--transitionMetalColor);
+    color : var(--transitionMetalColor);
+}
+.elementContainer[name = basicMetal][status = active]{
+    border : 4px solid var(--basicMetalColor);
+    color : var(--basicMetalColor);
+}
+.elementContainer[name = semiMetal][status = active]{
+    border : 4px solid var(--semiMetalColor);
+    color : var(--semiMetalColor); 
+}
+.elementContainer[name = nonMetal][status = active]{
+    border : 4px solid var(--nonMetalColor);
+    color :  var(--nonMetalColor);
+}
+.elementContainer[name = halogen][status = active]{
+    border : 4px solid var(--halogenColor);
+    color : var(--halogenColor); 
+}
+.elementContainer[name = nobleGas][status = active]{
+    border : 4px solid var(--nobleGasColor);
+    color : var(--nobleGasColor); 
+}
+.elementContainer[name = lanthanides][status = active]{
+    border : 4px solid var(--lanthanidesColor);
+    color : var(--lanthanidesColor);
+}
+.elementContainer[name = actinides][status = active]{
+    border : 4px solid var(--actinidesColor);
+    color : var(--actinidesColor);
 }
 
 .elementNumber, .elementSign, .elementName{
@@ -93,14 +200,93 @@ input{
 }
 
 .elementSign{
-    font-size: 20px;
+    font-size: 33px;
 }
 
 .elementName{
-    margin: 25px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
     font-size: 10px;
 }
 
 .split-1, .split-2{
     display: flex;
+}
+
+#groupIndexContainer{
+    bottom: 5px; 
+    margin: 20px 0px 0px 0px; 
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.groupIndex{
+    margin: 0px 15px; 
+    animation: pop 0.7s forwards; 
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.indexTitle{
+    color: #EFF8FF;
+}
+
+.colorSquare{
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    margin: 0px 0px 0px 10px;
+    box-shadow : 0px 0px 10px, inset 0px 0px 5px;
+}
+
+#alkalineEarth > .colorSquare{
+    background-color: var(--alkalineEarthColor);
+    border: 2px solid var(--alkalineEarthColor);
+}
+
+#alkalineMetal > .colorSquare{
+    background-color: var(--alkalineMetalColor);
+    border: 2px solid var(--alkalineMetalColor);
+}
+
+#transitionMetal > .colorSquare{
+    background-color: var(--transitionMetalColor);
+    border: 2px solid var(--transitionMetalColor);
+}
+
+#basicMetal > .colorSquare{
+    background-color: var(--basicMetalColor);
+    border: 2px solid var(--basicMetalColor);
+}
+
+#semiMetal > .colorSquare{
+    background-color: var(--semiMetalColor);
+    border: 2px solid var(--semiMetalColor);
+}
+
+#nonMetal > .colorSquare{
+    background-color: var(--nonMetalColor);
+    border: 2px solid var(--nonMetalColor);
+}
+
+#halogen > .colorSquare{
+    background-color: var(--halogenColor);
+    border: 2px solid var(--halogenColor);
+}
+
+#nobleGas > .colorSquare{
+    background-color: var(--nobleGasColor);
+    border: 2px solid var(--nobleGasColor);
+}
+
+#lanthanides > .colorSquare{
+    background-color: var(--lanthanidesColor);
+    border: 2px solid var(--lanthanidesColor);
+}
+
+#actinides > .colorSquare{
+    background-color: var(--actinidesColor);
+    border: 2px solid var(--actinidesColor);
 }

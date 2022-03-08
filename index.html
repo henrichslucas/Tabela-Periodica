@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Periodic Table</title>
 </head>
+
 <body onload="inputCheck()">
     <header>
         <h2 id="pageTitle">Periodic Table</h2>
         <label for="neonButton">
-            <span>Neon Switch</span>
-            <input type="checkbox" id="neonButton" checked >
+            <span id="neonBtnLabel">Neon Switch</span>
+            <input type="checkbox" id="neonButton" checked>
         </label>
     </header>
-    
+
     <div class="tableContainer">
+        
         <div id="firstRowContainer" class="rowContainer">
             <div class="split-1">
-                <div class="elementContainer" name="nonMetal" id="h"  >
+                <div class="elementContainer" name="nonMetal" id="h">
                     <span class="elementNumber">1</span>
                     <span class="elementSign">H</span>
                     <span class="elementName">Hydrogen</span>
@@ -36,7 +39,7 @@
             </div>
         </div>
 
-        <div id="secondRowContainer" class="rowContainer"> 
+        <div id="secondRowContainer" class="rowContainer">
             <div class="split-1">
                 <div class="elementContainer" name="alkalineMetal" id="li">
                     <span class="elementNumber">3</span>
@@ -442,7 +445,7 @@
                 <span class="elementSign">Tl</span>
                 <span class="elementName">Thallium</span>
             </div>
-            
+
             <div class="elementContainer" name="basicMetal" id="pb">
                 <span class="elementNumber">82</span>
                 <span class="elementSign">Pb</span>
@@ -454,7 +457,7 @@
                 <span class="elementSign">Bi</span>
                 <span class="elementName">Bismuth</span>
             </div>
-            
+
             <div class="elementContainer" name="semiMetal" id="po">
                 <span class="elementNumber">84</span>
                 <span class="elementSign">Po</span>
@@ -492,7 +495,7 @@
                 <span class="elementSign">?</span>
                 <span class="elementName">Actinides</span>
             </div>
-            
+
             <div class="elementContainer" name="transitionMetal" id="rf">
                 <span class="elementNumber">104</span>
                 <span class="elementSign">Rf</span>
@@ -677,99 +680,171 @@
         </div>
 
         <div id="ninthRowContainer" class="rowContainer">
-            <div class="elementContainer" name="actinides" id="ac" >
+            <div class="elementContainer" name="actinides" id="ac">
                 <span class="elementNumber">89</span>
                 <span class="elementSign">Ac</span>
                 <span class="elementName">Actinium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="th" state="hidden" >
+            <div class="elementContainer" name="actinides" id="th" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Th</span>
                 <span class="elementName">Thorium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="pa" state="hidden" >
+            <div class="elementContainer" name="actinides" id="pa" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Pa</span>
                 <span class="elementName">Protactinium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="u" state="hidden" >
+            <div class="elementContainer" name="actinides" id="u" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">U</span>
                 <span class="elementName">Uranium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="np" state="hidden" >
+            <div class="elementContainer" name="actinides" id="np" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Np</span>
                 <span class="elementName">Neptunium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="pu" state="hidden" >
+            <div class="elementContainer" name="actinides" id="pu" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Pu</span>
                 <span class="elementName">Plutonium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="am" state="hidden" >
+            <div class="elementContainer" name="actinides" id="am" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Am</span>
                 <span class="elementName">Americium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="cm" state="hidden" >
+            <div class="elementContainer" name="actinides" id="cm" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Cm</span>
                 <span class="elementName">Curium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="bk" state="hidden" >
+            <div class="elementContainer" name="actinides" id="bk" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Bk</span>
                 <span class="elementName">Berkelium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="cf" state="hidden" >
+            <div class="elementContainer" name="actinides" id="cf" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Cf</span>
                 <span class="elementName">Californium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="es" state="hidden" >
+            <div class="elementContainer" name="actinides" id="es" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Es</span>
                 <span class="elementName">Einstenium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="fm" state="hidden" >
+            <div class="elementContainer" name="actinides" id="fm" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Fm</span>
                 <span class="elementName">Fermium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="md" state="hidden" >
+            <div class="elementContainer" name="actinides" id="md" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Md</span>
                 <span class="elementName">Mendelevium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="no" state="hidden" >
+            <div class="elementContainer" name="actinides" id="no" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">No</span>
                 <span class="elementName">Nobelium</span>
             </div>
 
-            <div class="elementContainer" name="actinides" id="lr" state="hidden" >
+            <div class="elementContainer" name="actinides" id="lr" state="hidden">
                 <span class="elementNumber">57</span>
                 <span class="elementSign">Lr</span>
                 <span class="elementName">Lawrencium</span>
             </div>
         </div>
+
+        <div id="groupIndexContainer">
+            <div id="alkalineEarth" class="groupIndex">
+                <span class="indexTitle">
+                    Alkaline Earth
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+
+            <div id="alkalineMetal" class="groupIndex">
+                <span class="indexTitle">
+                    Alkaline Metal
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="transitionMetal" class="groupIndex">
+                <span class="indexTitle">
+                    Transition Metal
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="basicMetal" class="groupIndex">
+                <span class="indexTitle">
+                    Basic Metal
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="semiMetal" class="groupIndex">
+                <span class="indexTitle">
+                    Semi Metal
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="nonMetal" class="groupIndex">
+                <span class="indexTitle">
+                    Non Metal
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="halogen" class="groupIndex">
+                <span class="indexTitle">
+                    Halogen
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="nobleGas" class="groupIndex">
+                <span class="indexTitle">
+                    Noble Gas
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="lanthanides" class="groupIndex">
+                <span class="indexTitle">
+                    Lanthanides
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+            
+            <div id="actinides" class="groupIndex">
+                <span class="indexTitle">
+                    Actinides
+                </span>
+                <div class="colorSquare"></div>
+            </div>
+        </div>
     </div>
-        
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

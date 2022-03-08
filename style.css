@@ -229,8 +229,12 @@ input:checked::before{
     align-items: center;
 }
 
-.indexTitle{
+.indexTitle {
     color: #EFF8FF;
+}
+
+.indexTitle[status = off]{
+    color: #202020;
 }
 
 .colorSquare{
@@ -241,52 +245,57 @@ input:checked::before{
     box-shadow : 0px 0px 10px, inset 0px 0px 5px;
 }
 
-#alkalineEarth > .colorSquare{
+.colorSquare[status = off]{
+    background-color: var(--offColor);
+    border: 2px solid var(--offColor);
+}
+
+#alkalineEarth > .colorSquare[status = active]{
     background-color: var(--alkalineEarthColor);
     border: 2px solid var(--alkalineEarthColor);
 }
 
-#alkalineMetal > .colorSquare{
+#alkalineMetal > .colorSquare[status = active]{
     background-color: var(--alkalineMetalColor);
     border: 2px solid var(--alkalineMetalColor);
 }
 
-#transitionMetal > .colorSquare{
+#transitionMetal > .colorSquare[status = active]{
     background-color: var(--transitionMetalColor);
     border: 2px solid var(--transitionMetalColor);
 }
 
-#basicMetal > .colorSquare{
+#basicMetal > .colorSquare[status = active]{
     background-color: var(--basicMetalColor);
     border: 2px solid var(--basicMetalColor);
 }
 
-#semiMetal > .colorSquare{
+#semiMetal > .colorSquare[status = active]{
     background-color: var(--semiMetalColor);
     border: 2px solid var(--semiMetalColor);
 }
 
-#nonMetal > .colorSquare{
+#nonMetal > .colorSquare[status = active]{
     background-color: var(--nonMetalColor);
     border: 2px solid var(--nonMetalColor);
 }
 
-#halogen > .colorSquare{
+#halogen > .colorSquare[status = active]{
     background-color: var(--halogenColor);
     border: 2px solid var(--halogenColor);
 }
 
-#nobleGas > .colorSquare{
+#nobleGas > .colorSquare[status = active]{
     background-color: var(--nobleGasColor);
     border: 2px solid var(--nobleGasColor);
 }
 
-#lanthanides > .colorSquare{
+#lanthanides > .colorSquare[status = active]{
     background-color: var(--lanthanidesColor);
     border: 2px solid var(--lanthanidesColor);
 }
 
-#actinides > .colorSquare{
+#actinides > .colorSquare[status = active]{
     background-color: var(--actinidesColor);
     border: 2px solid var(--actinidesColor);
 }

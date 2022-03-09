@@ -218,7 +218,6 @@ input:checked::before{
     height: fit-content;
     display: flex;
     justify-content: center;
-    position: absolute;
 }
 
 .groupIndex{
